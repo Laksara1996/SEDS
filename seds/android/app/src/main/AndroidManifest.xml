@@ -10,6 +10,7 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="seds"
         android:icon="@mipmap/ic_launcher">
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyCsDTVRBo_ADFcvwjy7jGLeTxHbe1S48Xc"/>
@@ -33,4 +34,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

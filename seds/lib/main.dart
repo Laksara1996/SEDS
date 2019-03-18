@@ -1,6 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'dart:async';
 
 void main() => runApp(MyApp());
 
@@ -26,12 +27,30 @@ class MyHomePage extends StatefulWidget{
   @override
   _MyHomePageState createState() => _MyHomePageState();
 }
-
+String value = "";
 class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateMixin{
   int _currentIndex = 0;
+
   List <Widget> _tabsList = [
-    Center(
-      child:MapSample()
+    Stack(
+      children: <Widget>[
+        Container(
+          child: MapSample(),
+        ),
+        Container(
+            child: TextFormField(
+              decoration: new InputDecoration(
+                labelText: "Enter Location",
+                fillColor: Colors.red,
+                border: new OutlineInputBorder(
+                  borderRadius: new BorderRadius.circular(25.0),
+                ),
+              ),
+            ),
+
+        )
+
+      ],
     ),
     Container(
       child: MapSample()
@@ -108,6 +127,7 @@ class MapSampleState extends State<MapSample> {
   );
 
   static final CameraPosition _kLake = CameraPosition(
+
       bearing: 192.8334901395799,
       target: LatLng(37.43296265331129, -122.08832357078792),
       tilt: 59.440717697143555,
@@ -125,13 +145,15 @@ class MapSampleState extends State<MapSample> {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: _goToTheLake,
-        label: Text('To the lake!'),
-        icon: Icon(Icons.directions_boat),
+        label: Text('My Location'),
+        icon: Icon(Icons.location_searching),
       ),
     );
   }
 
   Future<void> _goToTheLake() async {
+
+
     final GoogleMapController controller = await _controller.future;
     controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
   }
