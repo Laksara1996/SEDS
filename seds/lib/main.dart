@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget{
       theme: ThemeData(
         primarySwatch: Colors.green
       ),
-      home: MyHomePage(title: 'Flutter Sample'),
+      home: MyHomePage(title: 'Spotter'),
     );
 
   }
@@ -99,10 +99,6 @@ class _MyHomePageState extends State<MyHomePage> with SingleTickerProviderStateM
               icon: Icon(Icons.control_point)
           ),
           BottomNavigationBarItem(
-              title: Text("Population"),
-              icon: Icon(Icons.supervisor_account)
-          ),
-          BottomNavigationBarItem(
               title: Text("Climate"),
               icon: Icon(Icons.cloud_queue)
           )
@@ -123,7 +119,7 @@ class MapSampleState extends State<MapSample> {
 
   static final CameraPosition _kGooglePlex = CameraPosition(
     target: LatLng(37.42796133580664, -122.085749655962),
-    zoom: 14.4746,
+    zoom: 5.4746,
   );
 
   static final CameraPosition _kLake = CameraPosition(
@@ -158,3 +154,4 @@ class MapSampleState extends State<MapSample> {
     controller.animateCamera(CameraUpdate.newCameraPosition(_kLake));
   }
 }
+
