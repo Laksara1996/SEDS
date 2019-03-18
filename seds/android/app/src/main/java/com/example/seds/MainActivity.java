@@ -1,4 +1,4 @@
-package com.example.satappp;
+package com.example.seds;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;
